@@ -2,8 +2,6 @@
   "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
   "waitFor": "onCreateCommand",
   "updateContentCommand": "pnpm install",
-  "postCreateCommand": "",
-  "postAttachCommand": "pnpm dev",
   "customizations": {
     "vscode": {
       "settings": {
@@ -13,12 +11,5 @@
         "biomejs.biome"
       ]
     }
-  },
-  "portsAttributes": {
-    "3000": {
-      "label": "Nextjs server",
-      "onAutoForward": "openPreview"
-    }
-  },
-  "forwardPorts": [3000]
+  }
 }
