@@ -1,0 +1,28 @@
+# Inspired from https://github.com/actions/starter-workflows/blob/main/pages/nextjs.yml
+name: Building test
+
+on:
+  push:
+    feature
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm install -g pnpm # Add this step to install pnpm
+      - id: configurepages
+        uses: actions/configure-pages@v5
+      - run: pnpm install
+      - run: pnpm build
+        env:
+          EXPORT: 1
+          UNOPTIMIZED: 1
+          BASE_PATH: ${{ steps.configurepages.outputs.base_path }}
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
