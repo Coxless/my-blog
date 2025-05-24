@@ -2,9 +2,7 @@
 name: Building test
 
 on:
-  push:
-    feature
-  workflow_dispatch:
+  pull_request
 
 permissions:
   contents: read
