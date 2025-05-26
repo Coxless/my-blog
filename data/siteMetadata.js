@@ -4,7 +4,7 @@ const siteMetadata = {
 	author: "Coxless",
 	headerTitle: "CoxlessBlog",
 	description: "A blog created with Next.js and Tailwind.css",
-	language: "en-us",
+	language: "ja-JP",
 	theme: "system", // system, dark or light
 	siteUrl: "https://coxless.github.io/my-blog/",
 	siteRepo: "https://github.com/Coxless/my-blog",
